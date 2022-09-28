@@ -2,7 +2,7 @@ function dde_on_connect()
     -- echo("dde_on_connect()\n")
 
     if (DdE == nil) then
-        return
+        dde_sysinstall()
     end
 
     DdE.Self_Name:echo("Disconnesso..")
