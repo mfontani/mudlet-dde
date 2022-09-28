@@ -1,5 +1,8 @@
 [
   {
+    "name": "dde",
+  },
+  {
     "name": "dde_sysinstall",
     "eventHandlerList": [
       "sysInstall"
