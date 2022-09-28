@@ -1,0 +1,45 @@
+[
+  {
+    "name": "dde_sysinstall",
+    "eventHandlerList": [
+      "sysInstall"
+    ]
+  },
+  {
+    "name": "dde_on_connect",
+    "eventHandlerList": [
+      "sysConnectionEvent",
+      "sysDisconnectionEvent"
+    ]
+  },
+  {
+    "name": "dde_on_gmcp_char_name",
+    "eventHandlerList": [
+      "gmcp.Char.Name"
+    ]
+  },
+  {
+    "name": "dde_on_gmcp_char_vitals",
+    "eventHandlerList": [
+      "gmcp.Char.Vitals"
+    ]
+  },
+  {
+    "name": "dde_on_gmcp_char_gruppo",
+    "eventHandlerList": [
+      "gmcp.Char.Gruppo"
+    ]
+  },
+  {
+    "name": "dde_on_gmcp_comm_channel_text",
+    "eventHandlerList": [
+      "gmcp.Comm.Channel.Text"
+    ]
+  },
+  {
+    "name": "dde_on_gmcp_char_magie",
+    "eventHandlerList": [
+      "gmcp.Char.Magie"
+    ]
+  }
+]
