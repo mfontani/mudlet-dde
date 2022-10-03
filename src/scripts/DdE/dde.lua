@@ -280,7 +280,7 @@ for i = 1, 5 do
         name = "dde_group" .. i .. "_hp",
         x = 0, y = 260 + 10 + (i-1) * 90 + 20,
         width = "100%", height = 20
-    }, DdE.S_Self)
+    }, DdE.Self)
     DdE.Gruppo[i]["hp"]:setValue(0, 1, i .. "&nbsp;n/a")
     DdE.Gruppo[i]["mana"] = Geyser.Gauge:new({
         name = "dde_group" .. i .. "_mana",
