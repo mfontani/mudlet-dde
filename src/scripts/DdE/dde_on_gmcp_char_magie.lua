@@ -94,4 +94,96 @@ function dde_on_gmcp_char_magie()
             DdE.Magie:decho("\n")
         end
     end
+
+    if gmcp.Char.Skills ~= nil then
+        local skills = gmcp.Char.Skills
+        local mignorate = {}
+        mignorate["conosci allineamento"] = 1
+        mignorate["disperdi magia"] = 1
+        mignorate["fuoco fatuo"] = 1
+        mignorate["paralisi"] = 1
+        mignorate["paura"] = 1
+        mignorate["teletrasporto"] = 1
+        mignorate["valuta mostri"] = 1
+        mignorate["parola di richiamo"] = 1
+        mignorate["nascondersi"] = 1
+        DdE.Magie:decho("------------\n")
+        for i, k in ipairs(skills) do
+            if skills[i].mana == nil then
+                skills[i].mana = 0
+            end
+        end
+        local sortedkeys = getKeysSortedByValue(skills, function(a,b)
+            if a.mana == b.mana then
+                return b.nome < a.nome
+            else
+                return a.mana < b.mana
+            end
+        end)
+        -- display(sortedkeys)
+        for _, k in ipairs(sortedkeys) do
+            local sk = skills[k]
+            if sk.tipo ~= nil then
+                if sk.tipo == "abilita" or sk.tipo == "incantesimo" then
+                    if sk.target ~= nil then
+                        if sk.target == "self" or sk.target == "defensive" then
+                            if sk.nome ~= nil and mignorate[sk.nome] == nil then
+                                -- Se la hai gia' castata, non mostrarla
+                                local trovata = 0
+                                if gmcp.Char.Magie ~= nil and gmcp.Char.Magie.incantesimi ~= nil then
+                                    for i, v in ipairs(gmcp.Char.Magie.incantesimi) do
+                                        if v.nome ~= nil and v.nome == sk.nome then
+                                            trovata = 1
+                                        end
+                                    end
+                                end
+                                if gmcp.Char.Magie ~= nil and gmcp.Char.Magie.proprieta ~= nil then
+                                    for i, v in ipairs(gmcp.Char.Magie.proprieta) do
+                                        if v.nome ~= nil and v.nome == sk.nome then
+                                            trovata = 1
+                                        end
+                                    end
+                                end
+                                if trovata == 0 then
+                                    -- if sk.livello ~= nil then
+                                    --     DdE.Magie:echo("[" .. sk.livello .. "] ")
+                                    -- end
+                                    if sk.tipo == "incantesimo" then
+                                        if gmcp.Char.Vitals ~= nil and gmcp.Char.Vitals.mana ~= nil then
+                                            if sk.mana <= gmcp.Char.Vitals.mana then
+                                                DdE.Magie:decho("<0,255,0>" .. sk.mana .. "<255,255,255>M<127,127,127>: ")
+                                            else
+                                                DdE.Magie:decho("<255,0,0>" .. sk.mana .. "<255,255,255>M<127,127,127>: ")
+                                            end
+                                        else
+                                            DdE.Magie:echo(sk.mana .. "M: ")
+                                        end
+                                    else
+                                        DdE.Magie:echo("Sk: ")
+                                    end
+                                    -- DdE.Magie:echo(sk.tipo)
+                                    if sk.nome ~= nil then
+                                        -- DdE.Magie:echo(" / ")
+                                        if sk.tipo == "incantesimo" then
+                                            DdE.Magie:dechoLink(sk.nome,
+                                                function() send("form '" .. sk.nome .. "'") end,
+                                                "Casta " .. sk.nome, true)
+                                        else
+                                            DdE.Magie:dechoLink(sk.nome,
+                                                function() send(sk.nome) end,
+                                                "Esegui " .. sk.nome, true)
+                                        end
+                                    end
+                                    -- if sk.target ~= nil then
+                                    --     DdE.Magie:echo(" (" .. sk.target .. ")")
+                                    -- end
+                                    DdE.Magie:echo("\n")
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
 end

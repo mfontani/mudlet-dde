@@ -42,7 +42,8 @@
   {
     "name": "dde_on_gmcp_char_magie",
     "eventHandlerList": [
-      "gmcp.Char.Magie"
+      "gmcp.Char.Magie",
+      "gmcp.Char.Skills"
     ]
   }
 ]
