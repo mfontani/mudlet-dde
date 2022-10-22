@@ -292,25 +292,76 @@ for i = 1, 10 do
     DdE.Gruppo[i] = {}
     DdE.Gruppo[i]["hp"] = Geyser.Gauge:new({
         name = "dde_group" .. i .. "_hp",
-        x = 0, y = -40 -80 - 10 - (i-1) * 90,
+        x = 0, y = -40 -80 - 10 - (i-1) * 80,
         width = "100%", height = 20
     }, DdE.GruppoC)
     DdE.Gruppo[i]["hp"]:setValue(0, 1, i .. "&nbsp;n/a")
+    DdE.Gruppo[i]["hp"]:setFontSize(12)
+    DdE.Gruppo[i]["hp"].front:setStyleSheet([[
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
+    border-top: 1px black solid;
+    border-left: 1px black solid;
+    border-bottom: 1px black solid;
+    border-radius: 7;
+    padding: 3px;
+    ]])
+    DdE.Gruppo[i]["hp"].back:setStyleSheet([[
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #78bd33, stop: 0.1 #6ebd20, stop: 0.49 #4c9900, stop: 0.5 #387000, stop: 1 #4c9900);
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 7;
+    padding: 3px;
+    ]])
     DdE.Gruppo[i]["mana"] = Geyser.Gauge:new({
         name = "dde_group" .. i .. "_mana",
-        x = 0, y = -40 -60 - 10 - (i-1) * 90,
-        width = "100%", height = 20
+        x = 0, y = -40 -60 - 10 - (i-1) * 80,
+        width = "100%", height = 10
     }, DdE.GruppoC)
     DdE.Gruppo[i]["mana"]:setValue(0, 1, i .. "&nbsp;n/a")
+    DdE.Gruppo[i]["mana"]:setFontSize(7)
+    DdE.Gruppo[i]["mana"].front:setStyleSheet([[
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #4198f0, stop: 0.1 #298cf0, stop: 0.49 #0066cc, stop: 0.5 #0052a3, stop: 1 #0066cc);
+    border-top: 1px black solid;
+    border-left: 1px black solid;
+    border-bottom: 1px black solid;
+    border-radius: 3;
+    padding: 3px;
+    ]])
+    DdE.Gruppo[i]["mana"].back:setStyleSheet([[
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3378bd, stop: 0.1 #206ebd, stop: 0.49 #004c99, stop: 0.5 #003870, stop: 1 #004c99);
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 3;
+    padding: 3px;
+    ]])
     DdE.Gruppo[i]["move"] = Geyser.Gauge:new({
         name = "dde_group" .. i .. "_move",
-        x = 0, y = -40 -40 - 10 - (i-1) * 90,
-        width = "100%", height = 20
+        x = 0, y = -40 -50 - 10 - (i-1) * 80,
+        width = "100%", height = 10
     }, DdE.GruppoC)
     DdE.Gruppo[i]["move"]:setValue(0, 1, i .. "&nbsp;n/a")
+    DdE.Gruppo[i]["move"]:setFontSize(7)
+    DdE.Gruppo[i]["move"].front:setStyleSheet([[
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #9841f0, stop: 0.1 #8c29f0, stop: 0.49 #6600cc, stop: 0.5 #5200a3, stop: 1 #6600cc);
+    border-top: 1px black solid;
+    border-left: 1px black solid;
+    border-bottom: 1px black solid;
+    border-radius: 3;
+    padding: 3px;
+    ]])
+    DdE.Gruppo[i]["move"].back:setStyleSheet([[
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #7833bd, stop: 0.1 #6e20bd, stop: 0.49 #4c0099, stop: 0.5 #380070, stop: 1 #4c0099);
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 3;
+    padding: 3px;
+    ]])
     DdE.Gruppo[i]["magie"] = Geyser.Label:new({
         name = "dde_group" .. i .. "_magie",
-        x = 0, y = -40 -20 - 10 - (i-1) * 90,
+        x = 0, y = -40 -40 - 10 - (i-1) * 80,
         width = "100%", height = 20
     }, DdE.GruppoC);
     DdE.Gruppo[i]["magie"]:setStyleSheet("background-color:transparent;")
