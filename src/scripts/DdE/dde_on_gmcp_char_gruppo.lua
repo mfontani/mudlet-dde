@@ -40,6 +40,7 @@ function dde_on_gmcp_char_gruppo()
         if v.incantesimi ~= nil then
             for _, v in ipairs(v.incantesimi) do
                 if (v == "volo") then sp["Vo"]=1 end
+                if (v == "volo di gruppo") then sp["Vo"]=1 end
                 if (v == "levitazione") then sp["Le"]=1 end
                 if (v == "benedizione") then sp["Be"]=1 end
                 if (v == "santificazione" or v == "aura sacra") then sp["Sa"]=1 end
