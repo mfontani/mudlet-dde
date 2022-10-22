@@ -274,7 +274,7 @@ DdE.Gruppo_Leader:hide()
 
 DdE.Gruppo = {}
 local i = 1
-for i = 1, 5 do
+for i = 1, 10 do
     DdE.Gruppo[i] = {}
     DdE.Gruppo[i]["hp"] = Geyser.Gauge:new({
         name = "dde_group" .. i .. "_hp",

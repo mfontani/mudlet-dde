@@ -21,7 +21,7 @@ function dde_on_connect()
     DdE.Gruppo_Leader:hide()
 
     local i = 1
-    for i = 1, 5 do
+    for i = 1, 10 do
         DdE.Gruppo[i]["hp"]:hide()
         DdE.Gruppo[i]["mana"]:hide()
         DdE.Gruppo[i]["move"]:hide()

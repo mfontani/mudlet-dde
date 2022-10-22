@@ -4,7 +4,7 @@ function dde_on_gmcp_char_gruppo()
     -- display(gmcp.Char.Gruppo)
 
     local i = 1
-    for i = 1, 5 do
+    for i = 1, 10 do
         DdE.Gruppo[i]["hp"]:hide()
         DdE.Gruppo[i]["mana"]:hide()
         DdE.Gruppo[i]["move"]:hide()
