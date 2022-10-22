@@ -8,19 +8,19 @@ function dde_on_gmcp_char_vitals()
     if (gmcp.Char.Name ~= nil and gmcp.Char.Name.name ~= nil) then
         DdE.Self_Name:echo(gmcp.Char.Name.name)
     end
-    DdE.Self_HP:setValue(val, max, "&nbsp;Hp: " .. val .. "/" .. max )
+    DdE.Self_HP:setValue(val, max, "&nbsp;Hp: " .. (math.floor(val*100/max)) .. "% - " .. val .. "/" .. max)
     val = gmcp.Char.Vitals.mana or 0
     max = gmcp.Char.Vitals.maxmana or 0
     if (val == 0 and max == 0) then
         val = gmcp.Char.Vitals.blood or 0
         max = gmcp.Char.Vitals.maxblood or 1    
-        DdE.Self_Mana:setValue(val, max, "&nbsp;Bl: " .. val .. "/" .. max )
+        DdE.Self_Mana:setValue(val, max, "&nbsp;Bl: " .. (math.floor(val*100/max)) .. "% - " .. val .. "/" .. max)
     else
-        DdE.Self_Mana:setValue(val, max, "&nbsp;Mn: " .. val .. "/" .. max )
+        DdE.Self_Mana:setValue(val, max, "&nbsp;Mn: " .. (math.floor(val*100/max)) .. "% - " .. val .. "/" .. max)
     end
     val = gmcp.Char.Vitals.move or 0
     max = gmcp.Char.Vitals.maxmove or 1
-    DdE.Self_Move:setValue(val, max, "&nbsp;Mv: " .. val .. "/" .. max )
+    DdE.Self_Move:setValue(val, max, "&nbsp;Mv: " .. (math.floor(val*100/max)) .. "% - " .. val .. "/" .. max)
     val = gmcp.Char.Vitals.lag or 0
     DdE.Self_Lag:setValue(val, 5, "&nbsp;Lag: " .. val)
     if gmcp.Char.Vitals.allineamento == nil or gmcp.Char.Vitals.favori == nil then
