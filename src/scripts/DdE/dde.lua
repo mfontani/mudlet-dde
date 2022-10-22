@@ -73,15 +73,15 @@ DdE.Magie = Geyser.MiniConsole:new({
 
 DdE.Self = Geyser.Container:new({
     name = "DdE Self",
-    x = 0, y = 0,
-    width = "100%", height = 5 * 20
+    x = 0, y = -8*20,
+    width = "100%", height = 8*20
 }, DdE.LHS)
 
 DdE.Self_Name = Geyser.Label:new({
     name = "dde_self_name",
     x = 0, y = 0,
     height = 20, width = "100%"
-}, DdE.LHS)
+}, DdE.Self)
 DdE.Self_Name:setAlignment("center")
 DdE.Self_Name:echo("N/A")
 -- DdE.Self_Name:setFontSize(11)
@@ -206,11 +206,19 @@ DdE.Stato:setAlignment("center")
 DdE.Stato:setStyleSheet("background-color:transparent;")
 DdE.Stato:echo("&nbsp;n/a")
 
+-- DdE.Self sta a 100% - 8*20
+-- Questo sta a 100% - 11*20 e contiene 2*20
+DdE.Combat = Geyser.Container:new({
+    name = "dde_combat",
+    x = 0, y = -11*20,
+    width = "100%", height = 2*20
+}, DdE.LHS);
+
 DdE.Tank_HP = Geyser.Gauge:new({
     name = "dde_tank_hp",
-    x = 0, y = 180,
+    x = 0, y = 0,
     width = "100%", height = 20
-}, DdE.Self)
+}, DdE.Combat)
 DdE.Tank_HP.front:setStyleSheet([[
 background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
 border-top: 1px black solid;
@@ -232,9 +240,9 @@ DdE.Tank_HP:hide()
 
 DdE.Target_HP = Geyser.Gauge:new({
     name = "dde_target_hp",
-    x = 0, y = 200,
+    x = 0, y = 20,
     width = "100%", height = 20
-}, DdE.Self)
+}, DdE.Combat)
 DdE.Target_HP.front:setStyleSheet([[
 background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
 border-top: 1px black solid;
@@ -254,20 +262,26 @@ padding: 3px;
 DdE.Target_HP:setValue(0, 1, "&nbsp;n/a")
 DdE.Target_HP:hide()
 
+DdE.GruppoC = Geyser.Container:new({
+    name = "DdE Gruppo",
+    x = 0, y = 0,
+    width = "100%", height = "100%-240"
+}, DdE.LHS)
+
 DdE.Gruppo_Nome = Geyser.Label:new({
     name = "dde_gruppo_nome",
-    x = 0, y = 240,
+    x = 0, y = -20,
     width = "100%", height = 20
-}, DdE.Self);
+}, DdE.GruppoC);
 DdE.Gruppo_Nome:setStyleSheet("background-color:transparent;")
 DdE.Gruppo_Nome:echo("&nbsp;n/a")
 DdE.Gruppo_Nome:hide()
 
 DdE.Gruppo_Leader = Geyser.Label:new({
     name = "dde_gruppo_leader",
-    x = 0, y = 260,
+    x = 0, y = -40,
     width = "100%", height = 20
-}, DdE.Self);
+}, DdE.GruppoC);
 DdE.Gruppo_Leader:setStyleSheet("background-color:transparent;")
 DdE.Gruppo_Leader:echo("&nbsp;n/a")
 DdE.Gruppo_Leader:hide()
@@ -278,27 +292,27 @@ for i = 1, 10 do
     DdE.Gruppo[i] = {}
     DdE.Gruppo[i]["hp"] = Geyser.Gauge:new({
         name = "dde_group" .. i .. "_hp",
-        x = 0, y = 260 + 10 + (i-1) * 90 + 20,
+        x = 0, y = -40 -80 - 10 - (i-1) * 90,
         width = "100%", height = 20
-    }, DdE.Self)
+    }, DdE.GruppoC)
     DdE.Gruppo[i]["hp"]:setValue(0, 1, i .. "&nbsp;n/a")
     DdE.Gruppo[i]["mana"] = Geyser.Gauge:new({
         name = "dde_group" .. i .. "_mana",
-        x = 0, y = 260 + 10 + (i-1) * 90 + 40,
+        x = 0, y = -40 -60 - 10 - (i-1) * 90,
         width = "100%", height = 20
-    }, DdE.Self)
+    }, DdE.GruppoC)
     DdE.Gruppo[i]["mana"]:setValue(0, 1, i .. "&nbsp;n/a")
     DdE.Gruppo[i]["move"] = Geyser.Gauge:new({
         name = "dde_group" .. i .. "_move",
-        x = 0, y = 260 + 10 + (i-1) * 90 + 60,
+        x = 0, y = -40 -40 - 10 - (i-1) * 90,
         width = "100%", height = 20
-    }, DdE.Self)
+    }, DdE.GruppoC)
     DdE.Gruppo[i]["move"]:setValue(0, 1, i .. "&nbsp;n/a")
     DdE.Gruppo[i]["magie"] = Geyser.Label:new({
         name = "dde_group" .. i .. "_magie",
-        x = 0, y = 260 + 10 + (i-1) * 90 + 80,
+        x = 0, y = -40 -20 - 10 - (i-1) * 90,
         width = "100%", height = 20
-    }, DdE.Self);
+    }, DdE.GruppoC);
     DdE.Gruppo[i]["magie"]:setStyleSheet("background-color:transparent;")
     DdE.Gruppo[i]["magie"]:setFontSize(8)
     DdE.Gruppo[i]["magie"]:echo("&nbsp;n/a")
