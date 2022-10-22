@@ -93,19 +93,19 @@ DdE.Self_HP = Geyser.Gauge:new({
     width = "100%", height = 20
 }, DdE.Self)
 DdE.Self_HP.front:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
+background-color: #307000;
 border-top: 1px black solid;
 border-left: 1px black solid;
 border-bottom: 1px black solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Self_HP.back:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #78bd33, stop: 0.1 #6ebd20, stop: 0.49 #4c9900, stop: 0.5 #387000, stop: 1 #4c9900);
+background-color: #002000;
 border-width: 1px;
 border-color: black;
 border-style: solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Self_HP:setValue(0, 1, "&nbsp;n/a")
@@ -116,19 +116,19 @@ DdE.Self_Mana = Geyser.Gauge:new({
     width = "100%", height = 20
 }, DdE.Self)
 DdE.Self_Mana.front:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #4198f0, stop: 0.1 #298cf0, stop: 0.49 #0066cc, stop: 0.5 #0052a3, stop: 1 #0066cc);
+background-color: #0066cc;
 border-top: 1px black solid;
 border-left: 1px black solid;
 border-bottom: 1px black solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Self_Mana.back:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3378bd, stop: 0.1 #206ebd, stop: 0.49 #004c99, stop: 0.5 #003870, stop: 1 #004c99);
+background-color: #002850;
 border-width: 1px;
 border-color: black;
 border-style: solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Self_Mana:setValue(0, 1, "&nbsp;n/a")
@@ -139,19 +139,19 @@ DdE.Self_Move = Geyser.Gauge:new({
     width = "100%", height = 20
 }, DdE.Self)
 DdE.Self_Move.front:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #9841f0, stop: 0.1 #8c29f0, stop: 0.49 #6600cc, stop: 0.5 #5200a3, stop: 1 #6600cc);
+background-color: #5200a3;
 border-top: 1px black solid;
 border-left: 1px black solid;
 border-bottom: 1px black solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Self_Move.back:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #7833bd, stop: 0.1 #6e20bd, stop: 0.49 #4c0099, stop: 0.5 #380070, stop: 1 #4c0099);
+background-color: #180050;
 border-width: 1px;
 border-color: black;
 border-style: solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Self_Move:setValue(0, 1, "&nbsp;n/a")
@@ -162,19 +162,19 @@ DdE.Self_Lag = Geyser.Gauge:new({
     width = "100%", height = 20
 }, DdE.Self)
 DdE.Self_Lag.front:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f09841, stop: 0.1 #f08c29, stop: 0.49 #cc6600, stop: 0.5 #a35200, stop: 1 #cc6600);
+background-color: #a35200;
 border-top: 1px black solid;
 border-left: 1px black solid;
 border-bottom: 1px black solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Self_Lag.back:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #bd7833, stop: 0.1 #bd6e20, stop: 0.49 #994c00, stop: 0.5 #703800, stop: 1 #994c00);
+background-color: #401800;
 border-width: 1px;
 border-color: black;
 border-style: solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Self_Lag:setValue(0, 1, "&nbsp;n/a")
@@ -220,19 +220,19 @@ DdE.Tank_HP = Geyser.Gauge:new({
     width = "100%", height = 20
 }, DdE.Combat)
 DdE.Tank_HP.front:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
+background-color: #307000;
 border-top: 1px black solid;
 border-left: 1px black solid;
 border-bottom: 1px black solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Tank_HP.back:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #78bd33, stop: 0.1 #6ebd20, stop: 0.49 #4c9900, stop: 0.5 #387000, stop: 1 #4c9900);
+background-color: #002000;
 border-width: 1px;
 border-color: black;
 border-style: solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Tank_HP:setValue(0, 1, "&nbsp;n/a")
@@ -244,19 +244,19 @@ DdE.Target_HP = Geyser.Gauge:new({
     width = "100%", height = 20
 }, DdE.Combat)
 DdE.Target_HP.front:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
+background-color: #307000;
 border-top: 1px black solid;
 border-left: 1px black solid;
 border-bottom: 1px black solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Target_HP.back:setStyleSheet([[
-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #78bd33, stop: 0.1 #6ebd20, stop: 0.49 #4c9900, stop: 0.5 #387000, stop: 1 #4c9900);
+background-color: #002000;
 border-width: 1px;
 border-color: black;
 border-style: solid;
-border-radius: 7;
+border-radius: 4;
 padding: 3px;
 ]])
 DdE.Target_HP:setValue(0, 1, "&nbsp;n/a")
@@ -298,19 +298,19 @@ for i = 1, 10 do
     DdE.Gruppo[i]["hp"]:setValue(0, 1, i .. "&nbsp;n/a")
     DdE.Gruppo[i]["hp"]:setFontSize(12)
     DdE.Gruppo[i]["hp"].front:setStyleSheet([[
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
+    background-color: #307000;
     border-top: 1px black solid;
     border-left: 1px black solid;
     border-bottom: 1px black solid;
-    border-radius: 7;
+    border-radius: 4;
     padding: 3px;
     ]])
     DdE.Gruppo[i]["hp"].back:setStyleSheet([[
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #78bd33, stop: 0.1 #6ebd20, stop: 0.49 #4c9900, stop: 0.5 #387000, stop: 1 #4c9900);
+    background-color: #002000;
     border-width: 1px;
     border-color: black;
     border-style: solid;
-    border-radius: 7;
+    border-radius: 4;
     padding: 3px;
     ]])
     DdE.Gruppo[i]["mana"] = Geyser.Gauge:new({
@@ -321,7 +321,7 @@ for i = 1, 10 do
     DdE.Gruppo[i]["mana"]:setValue(0, 1, i .. "&nbsp;n/a")
     DdE.Gruppo[i]["mana"]:setFontSize(7)
     DdE.Gruppo[i]["mana"].front:setStyleSheet([[
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #4198f0, stop: 0.1 #298cf0, stop: 0.49 #0066cc, stop: 0.5 #0052a3, stop: 1 #0066cc);
+    background-color: #0066cc;
     border-top: 1px black solid;
     border-left: 1px black solid;
     border-bottom: 1px black solid;
@@ -329,7 +329,7 @@ for i = 1, 10 do
     padding: 3px;
     ]])
     DdE.Gruppo[i]["mana"].back:setStyleSheet([[
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3378bd, stop: 0.1 #206ebd, stop: 0.49 #004c99, stop: 0.5 #003870, stop: 1 #004c99);
+    background-color: #002850;
     border-width: 1px;
     border-color: black;
     border-style: solid;
@@ -344,7 +344,7 @@ for i = 1, 10 do
     DdE.Gruppo[i]["move"]:setValue(0, 1, i .. "&nbsp;n/a")
     DdE.Gruppo[i]["move"]:setFontSize(7)
     DdE.Gruppo[i]["move"].front:setStyleSheet([[
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #9841f0, stop: 0.1 #8c29f0, stop: 0.49 #6600cc, stop: 0.5 #5200a3, stop: 1 #6600cc);
+    background-color: #5200a3;
     border-top: 1px black solid;
     border-left: 1px black solid;
     border-bottom: 1px black solid;
@@ -352,7 +352,7 @@ for i = 1, 10 do
     padding: 3px;
     ]])
     DdE.Gruppo[i]["move"].back:setStyleSheet([[
-    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #7833bd, stop: 0.1 #6e20bd, stop: 0.49 #4c0099, stop: 0.5 #380070, stop: 1 #4c0099);
+    background-color: #180050;
     border-width: 1px;
     border-color: black;
     border-style: solid;
