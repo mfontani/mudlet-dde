@@ -3,24 +3,18 @@ function dde_on_gmcp_char_vitals()
 
     -- display(gmcp.Char.Vitals)
 
-    local val = gmcp.Char.Vitals.hp or 0
-    local max = gmcp.Char.Vitals.maxhp or 1
     if (gmcp.Char.Name ~= nil and gmcp.Char.Name.name ~= nil) then
         DdE.Self_Name:echo(gmcp.Char.Name.name)
     end
-    DdE.Self_HP:setValue(val, max, "&nbsp;Hp: " .. (math.floor(val*100/max)) .. "% - " .. val .. "/" .. max)
-    val = gmcp.Char.Vitals.mana or 0
-    max = gmcp.Char.Vitals.maxmana or 0
+    dde_set_gauge_val_and_pct(DdE.Self_HP, gmcp.Char.Vitals.hp, gmcp.Char.Vitals.maxhp, "Hp")
+    local val = gmcp.Char.Vitals.mana or 0
+    local max = gmcp.Char.Vitals.maxmana or 0
     if (val == 0 and max == 0) then
-        val = gmcp.Char.Vitals.blood or 0
-        max = gmcp.Char.Vitals.maxblood or 1    
-        DdE.Self_Mana:setValue(val, max, "&nbsp;Bl: " .. (math.floor(val*100/max)) .. "% - " .. val .. "/" .. max)
+        dde_set_gauge_val_and_pct(DdE.Self_Mana, gmcp.Char.Vitals.blood, gmcp.Char.Vitals.maxblood, "Bl")
     else
-        DdE.Self_Mana:setValue(val, max, "&nbsp;Mn: " .. (math.floor(val*100/max)) .. "% - " .. val .. "/" .. max)
+        dde_set_gauge_val_and_pct(DdE.Self_Mana, gmcp.Char.Vitals.mana, gmcp.Char.Vitals.maxmana, "Mn")
     end
-    val = gmcp.Char.Vitals.move or 0
-    max = gmcp.Char.Vitals.maxmove or 1
-    DdE.Self_Move:setValue(val, max, "&nbsp;Mv: " .. (math.floor(val*100/max)) .. "% - " .. val .. "/" .. max)
+    dde_set_gauge_val_and_pct(DdE.Self_Move, gmcp.Char.Vitals.move, gmcp.Char.Vitals.maxmove, "Mv")
     val = gmcp.Char.Vitals.lag or 0
     DdE.Self_Lag:setValue(val, 5, "&nbsp;Lag: " .. val)
     if gmcp.Char.Vitals.allineamento == nil or gmcp.Char.Vitals.favori == nil then

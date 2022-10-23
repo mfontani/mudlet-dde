@@ -372,3 +372,44 @@ for i = 1, 10 do
     DdE.Gruppo[i]["mana"]:hide()
     DdE.Gruppo[i]["move"]:hide()
 end
+
+function dde_set_gauge_pct(gauge, v, title)
+    local pct = v or 0
+    local max = 100
+    local padding = ""
+    if pct < -9 then
+        padding = "&nbsp;"
+    elseif pct < 0 then
+        padding = ""
+    elseif pct < 10 then
+        padding = "&nbsp;&nbsp;"
+    elseif pct < 100 then
+        padding = "&nbsp;"
+    else
+        padding = ""
+    end
+    if title ~= nil then
+        gauge:setValue(pct > max and max or pct, max, "&nbsp;" .. title .. " - " .. padding .. pct .. "%")
+    else
+        gauge:setValue(pct > max and max or pct, max, "&nbsp;" .. padding .. pct .. "%")
+    end
+end
+
+function dde_set_gauge_val_and_pct(gauge, v, m, title)
+    local val = v or 0
+    local max = m or 0
+    local pct = max == 0 and 0 or math.floor(val * 100 / max)
+    local padding = ""
+    if pct < -9 then
+        padding = "&nbsp;"
+    elseif pct < 0 then
+        padding = ""
+    elseif pct < 10 then
+        padding = "&nbsp;&nbsp;"
+    elseif pct < 100 then
+        padding = "&nbsp;"
+    else
+        padding = ""
+    end
+    gauge:setValue(val > max and max or val, max, "&nbsp;" .. title .. ": " .. padding .. pct .. "% - " .. val .. "/" .. max)
+end
