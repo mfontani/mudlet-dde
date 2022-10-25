@@ -2,6 +2,17 @@ function dde_on_gmcp_char_vitals()
     -- echo("dde_on_gmcp_char_vitals()\n")
 
     -- display(gmcp.Char.Vitals)
+    if gmcp.Char.Vitals ~= nil and gmcp.Char.Vitals.exp_totale ~= nil then
+        if DdE.XPStart == nil then
+            DdE.XPStart = gmcp.Char.Vitals.exp_totale
+            DdE.TimeStart = getEpoch()
+        end
+        local now = getEpoch()
+        local xpdone  = gmcp.Char.Vitals.exp_totale - DdE.XPStart;
+        local elapsed = (now - DdE.TimeStart) / (60*60)
+        local xpph = xpdone/elapsed
+        DdE.XPPH:echo(math.floor(xpph) .. " XP/h")
+    end
 
     if (gmcp.Char.Name ~= nil and gmcp.Char.Name.name ~= nil) then
         DdE.Self_Name:echo(gmcp.Char.Name.name)

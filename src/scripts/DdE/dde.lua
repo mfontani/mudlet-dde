@@ -71,6 +71,21 @@ DdE.Magie = Geyser.MiniConsole:new({
     height = "100%"
 }, DdE.RHS)
 
+DdE.XPPH_Container = Geyser.Container:new({
+    name = "DdE XPPH",
+    x = 0, y = 0,
+    width = "100%", height = 20
+}, DdE.LHS)
+DdE.XPPH = Geyser.Label:new({
+    name = "dde_xp_per_hour",
+    x = 0, y = 0,
+    width = "100%", height = 20
+}, DdE.XPPH_Container);
+DdE.XPPH:setAlignment("center")
+DdE.XPPH:echo("N/A")
+-- DdE.XPPH:setFontSize(11)
+DdE.XPPH:setStyleSheet("background-color:transparent;")
+
 DdE.Self = Geyser.Container:new({
     name = "DdE Self",
     x = 0, y = -8*20,

@@ -5,6 +5,8 @@ function dde_on_connect()
         dde_sysinstall()
     end
 
+    DdE.XPStart = nil
+    DdE.XPPH:echo("N/A")
     DdE.Self_Name:echo("Disconnesso..")
     DdE.Self_HP:setValue(0, 1, "&nbsp;n/a")
     DdE.Self_Mana:setValue(0, 1, "&nbsp;n/a")
