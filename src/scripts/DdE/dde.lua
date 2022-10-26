@@ -307,7 +307,7 @@ for i = 1, 10 do
     DdE.Gruppo[i] = {}
     DdE.Gruppo[i]["hp"] = Geyser.Gauge:new({
         name = "dde_group" .. i .. "_hp",
-        x = 0, y = -40 -80 - 10 - (i-1) * 80,
+        x = 0, y = -40 -70 - 10 - (i-1) * 70,
         width = "100%", height = 20
     }, DdE.GruppoC)
     DdE.Gruppo[i]["hp"]:setValue(0, 1, i .. "&nbsp;n/a")
@@ -330,7 +330,7 @@ for i = 1, 10 do
     ]])
     DdE.Gruppo[i]["mana"] = Geyser.Gauge:new({
         name = "dde_group" .. i .. "_mana",
-        x = 0, y = -40 -60 - 10 - (i-1) * 80,
+        x = 0, y = -40 -50 - 10 - (i-1) * 70,
         width = "100%", height = 10
     }, DdE.GruppoC)
     DdE.Gruppo[i]["mana"]:setValue(0, 1, i .. "&nbsp;n/a")
@@ -353,7 +353,7 @@ for i = 1, 10 do
     ]])
     DdE.Gruppo[i]["move"] = Geyser.Gauge:new({
         name = "dde_group" .. i .. "_move",
-        x = 0, y = -40 -50 - 10 - (i-1) * 80,
+        x = 0, y = -40 -40 - 10 - (i-1) * 70,
         width = "100%", height = 10
     }, DdE.GruppoC)
     DdE.Gruppo[i]["move"]:setValue(0, 1, i .. "&nbsp;n/a")
@@ -376,7 +376,7 @@ for i = 1, 10 do
     ]])
     DdE.Gruppo[i]["magie"] = Geyser.Label:new({
         name = "dde_group" .. i .. "_magie",
-        x = 0, y = -40 -40 - 10 - (i-1) * 80,
+        x = 0, y = -40 -30 - 10 - (i-1) * 70,
         width = "100%", height = 20
     }, DdE.GruppoC);
     DdE.Gruppo[i]["magie"]:setStyleSheet("background-color:transparent;")
